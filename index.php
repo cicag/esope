@@ -143,7 +143,7 @@ include 'includes/header.php';
         <span class="opt-score">+3</span>
       </label>
 
-  <h3>Bantuan Oksigen</h3>
+  <h3>Nadi</h3>
 
    <input type="radio" id="q6a" name="answers[6]" value="A" data-score="3">
       <label for="q6a" class="option">
@@ -183,13 +183,11 @@ include 'includes/header.php';
 
   <h3>Skor AVPU</h3>
 
-
    <input type="radio" id="q7a" name="answers[7]" value="A" data-score="0">
       <label for="q7a" class="option">
         <span class="opt-text">A</span>
         <span class="opt-score">0</span>
       </label>
-
 
    <input type="radio" id="q7b" name="answers[7]" value="B" data-score="3">
       <label for="q7b" class="option">
@@ -197,10 +195,17 @@ include 'includes/header.php';
         <span class="opt-score">+3</span>
       </label>
 
+      <br>
+      <button type="button" onclick="Hitung()">Selesai</button>
+
+      <h2 id="result"></h2>
+
+
 <!-- Kaki, tentang Bantu -->
 <?php
   include 'includes/footer.php';
 ?>
 
+<script src="js/hitung.js"></script>
 </body>
 </html>
