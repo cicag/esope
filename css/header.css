@@ -1,0 +1,43 @@
+/* Container header */
+html, body {
+    margin: 0;
+    padding: 20 20 20 20;
+}
+
+header {
+    background-color: #6B7A5F;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Judul */
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Tombol info bulat putih */
+.info-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;     /* bulatan putih */
+    color: #444;                /* huruf i lebih gelap */
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* efek hover: sedikit abu pada latar */
+.info-btn:hover {
+    background-color: #eee;
+    color: #000;
+}

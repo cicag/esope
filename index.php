@@ -7,6 +7,8 @@ require 'includes/functions.php';
 <html>
 <head>
   <title>ESOPE</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
   <header>
@@ -33,9 +35,9 @@ require 'includes/functions.php';
   </div>
 
 <!-- Kaki, tentang ESOPE -->
-<?php
-  include 'includes/footer.php';
-?>
+  <footer>
+    <?php include 'includes/footer.php';?>
+  </footer>
 
 <script src="js/hitung.js"></script>
 </body>
