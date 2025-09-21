@@ -1,0 +1,28 @@
+.kontainer {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.formkiri {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.hasilkanan {
+    background: #eef5f1;
+    padding: 15px;
+    border-radius: 10px;
+    position: static;
+}
+
+#scorebox {
+  background: #c62828;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}

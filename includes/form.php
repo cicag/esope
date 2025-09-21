@@ -186,3 +186,9 @@
           <span class="opt-score">+3</span>
         </label>
 
+    <br><br>
+    <section class="action">
+        <button type="reset">Reset</button>
+        <button type="button" onclick="Hitung()">Hitung!</button>
+    </section>
+
