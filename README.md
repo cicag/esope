@@ -28,4 +28,15 @@ Konsep antarmuka:
    ```
 4. Jalankan webserver dan akses dari localhost
 ---
+## Note
+Pakai branch ![tampilan](https://github.com/cicag/esope/tree/tampilan) untuk mendapatkan tampilan.  
+Default database:  
+
+```
+address  : localhost
+username  : root
+password  : 1234
+database  : esope
+```
+Bisa disesuaikan di includes/functions.php
 
