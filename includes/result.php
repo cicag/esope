@@ -2,7 +2,6 @@
     <tr>
       <th>Kategori</th>
       <th>Respon Klinis</th>
-      <th>Saran Tindakan</th>
       <th>Monitoring</th>
     </tr>
   </table>
