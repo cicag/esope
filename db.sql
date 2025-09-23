@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 20, 2025 at 03:14 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Sep 23, 2025 at 04:05 AM
+-- Server version: 8.0.35-0ubuntu0.22.04.1
+-- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `news` (
-  `id` int(11) NOT NULL,
-  `klasifikasi` varchar(100) NOT NULL,
-  `respon` longtext NOT NULL,
-  `tindakan` longtext NOT NULL,
-  `monitoring` varchar(100) NOT NULL,
-  `nummin` int(11) NOT NULL,
-  `nummax` int(11) NOT NULL
+  `id` int NOT NULL,
+  `klasifikasi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `respon` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `tindakan` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `monitoring` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `nummin` int NOT NULL,
+  `nummax` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,10 +42,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `klasifikasi`, `respon`, `tindakan`, `monitoring`, `nummin`, `nummax`) VALUES
-(1, 'SANGAT RENDAH', 'Dilakukan monitoring.', 'Melanjutkan monitoring.', 'Minimal 12 jam', 0, 0),
-(2, 'RENDAH', '<ol>\r\n<li>Harus segera dievaluasi oleh perawat yang terdaftar kompeten,</li>\r\n<li>Harus memutuskan apakah perubahan frekuensi pemantauan klinis atau wajib eskalasi perawatan klinis</li>\r\n</ol>', 'Perawat melakukan asessmen atau perawat meningkatkan frekuensi monitoring', 'Minimal 4-6 jam.', 1, 4),
-(3, 'SEDANG', 'Harus segera melakukan tinjauan mendesak oleh klinisi yang terampil dengan kompetensi dalam penilaian penyakit akut di bangsal, biasanya oleh dokter atau perawat dengan mempertimbangkan apakah eskalasi perawatan ke tim perawatan klinis yang diperlukan (yaitu tim penjangkauan perawatan kritis).', 'Perawat berkolaborasi dengan tim / pemberian asesmen kegawatan / meningkatkan perawatan dengan fasilitas monitor yang lengkap.', 'Minimal 1 jam.', 5, 6),
-(4, 'TINGGI', 'Harus segera memberikan penilaian darurat secara klinis oleh tim critical care outreach atau code blue dengan kompetensi penanganan pasien kritis dan biasanya terjadi transfer pasien ke area perawatan dengan alat bantu.', 'Berkolaborasi dengan tim medis/ pemberi asesmen kegawatan/ pindah ruangan HCU/ICU.', 'Bedset monitor everytime', 7, 19);
+(1, 'SANGAT RENDAH', '<ol>\r\n<li>Pemantauan Tanda Vital Rutin</li>\r\n</ol>', 'Melanjutkan monitoring.', 'Minimal setiap 12 jam', 0, 0),
+(2, 'RENDAH', '<ol>\r\n<li>Pemantauan tanda vital rutin,</li>\r\n<li>Dokumentasi skor NEWS,</li>\r\n<li>Lanjutkan perawatan sesuai kondisi.</li>\r\n</ol>', 'Perawat melakukan asessmen atau perawat meningkatkan frekuensi monitoring', 'Minimal 4-6 jam.', 1, 4),
+(3, 'SEDANG', '<ol>\r\n<li>Tingkatkan frekuensi pemantauan menjadi setiap 4-6 jam,</li>\r\n<li>Laporkan ke DPJP,</li>\r\n<li>ertimbangkan pemberian oksigen jika diperlukan,</li>\r\n<li>Evaluasi kebutuhan pemeriksaan penunjang (e.g., EKG, lab).</li>\r\n</ol>', 'Perawat berkolaborasi dengan tim / pemberian asesmen kegawatan / meningkatkan perawatan dengan fasilitas monitor yang lengkap.', 'Minimal setiap 1 jam.', 5, 6),
+(4, 'TINGGI', '<ol>\r\n<li>Segera laporkan ke DPJP,</li>\r\n<li>Pantau tanda vital setiap 30-60 menit,</li>\r\n<li>Siapkan akses IV, oksigen, dan alat emergensi,</li>\r\n<li>Pertimbangkan transfer ke ICU,</li>\r\n<li>Mulai pendokumentasian berkala setiap jam.</li>\r\n</ol>', 'Berkolaborasi dengan tim medis/ pemberi asesmen kegawatan/ pindah ruangan HCU/ICU.', 'Monitor setiap saat.', 7, 20);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +65,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
