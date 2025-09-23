@@ -28,7 +28,7 @@
 
 <h2>Untuk siapa ESOPE?</h2>
 
-<p><ol><li>ESOPE NEWS dapat digunakan oleh semua tenaga kesehatan</li><li>ESOPE NEWS digunakan pada pasien dewasa (>16 tahun) yang kecuali ibu hamil dan. </li></ol></p>
+<p><ol><li>ESOPE NEWS dapat digunakan oleh semua tenaga kesehatan</li><li>ESOPE NEWS digunakan pada pasien dewasa (>16 tahun) yang kecuali ibu hamil dan pasien cedera tulang belakang. </li></ol></p>
 
 <h2>Dimana ESOPE bisa digunakan?</h2>
 <p>Aplikasi dapat digunakan di IGD, ICU dan ruang rawat inap.</p>
