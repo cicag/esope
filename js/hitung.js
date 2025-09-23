@@ -22,14 +22,12 @@ fetch("includes/functions.php", {
     <tr>
     <th>Kategori</th>
     <th>Respon Klinis</th>
-    <th>Saran Tindakan</th>
     <th>Monitoring</th>
     </tr>`;
     data.forEach(row => {
         html += `<tr>
         <td>${row.klasifikasi}</td>
         <td>${row.respon}</td>
-        <td>${row.tindakan}</td>
         <td>${row.monitoring}</td>
         </tr>`;
     });

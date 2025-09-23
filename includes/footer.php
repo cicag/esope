@@ -1,1 +1,1 @@
-    <a href="includes/about.php">ESOPE v0-pre-alpha</a>
+    <a href="includes/about.php">Prototipe ESOPE v0</a>
