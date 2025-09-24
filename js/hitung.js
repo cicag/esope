@@ -9,15 +9,15 @@ function Hitung() {
     const resultBox = document.getElementById("result");
     resultBox.innerHTML = total;
 
-    // Set color based on score
+    // Set background color based on score
     if (total === 0) {
-        resultBox.style.color = 'white';
+        resultBox.style.backgroundColor = 'white';
     } else if (total >= 1 && total <= 3) {
-        resultBox.style.color = 'green';
+        resultBox.style.backgroundColor = 'green';
     } else if (total >= 4 && total <= 6) {
-        resultBox.style.color = 'yellow';
+        resultBox.style.backgroundColor = 'yellow';
     } else if (total >= 7) {
-        resultBox.style.color = 'red';
+        resultBox.style.backgroundColor = 'red';
     }
 
 // kirim total ke PHP

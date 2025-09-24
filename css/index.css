@@ -1,6 +1,6 @@
 .kontainer {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
@@ -8,35 +8,33 @@
 }
 
 .formkiri {
-    flex: 1 1 60%;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #f8f8f8;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hasilkanan {
-    flex: 1 1 35%;
-    background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+    background: #eef5f1;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #scorebox {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    background: #c62828;
     color: white;
     padding: 15px;
-    border-radius: 12px;
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #result {
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 table {
@@ -56,7 +54,7 @@ th, td {
 }
 
 th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #4CAF50;
     color: white;
 }
 
