@@ -22,7 +22,7 @@
 }
 
 #scorebox {
-    background: #c62828;
+    background: #4CAF50;
     color: white;
     padding: 15px;
     border-radius: 8px;
@@ -30,6 +30,7 @@
     margin-bottom: 15px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 #result {
