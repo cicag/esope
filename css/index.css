@@ -1,28 +1,65 @@
 .kontainer {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .formkiri {
-    background: #f8f8f8;
-    padding: 15px;
-    border-radius: 10px;
+    flex: 1 1 60%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hasilkanan {
-    background: #eef5f1;
-    padding: 15px;
-    border-radius: 10px;
-    position: static;
+    flex: 1 1 35%;
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #scorebox {
-  background: #c62828;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 1.5em;
-  margin-bottom: 15px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#result {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+tr:hover {
+    background: #f1f1f1;
 }
