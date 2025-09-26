@@ -191,10 +191,7 @@ button[type="reset"]:hover {
     }
 
     #scorebox {
-    flex-direction: column; /* header atas, angka bawah */
-    align-items: center;
-    text-align: center;
-    padding: 12px;
+        padding: 12px;
     }
 
     .skor-header {
