@@ -39,10 +39,10 @@ function Hitung() {
     if (total === 0) {
         scoreBox.style.backgroundColor = 'white';
         scoreBox.style.color = 'black';
-    } else if (total >= 1 && total <= 3) {
+    } else if (total >= 1 && total <= 4) {
         scoreBox.style.backgroundColor = '#65824e';
         scoreBox.style.color = 'white';
-    } else if (total >= 4 && total <= 6) {
+    } else if (total >= 5 && total <= 6) {
         scoreBox.style.backgroundColor = '#f2ee27';
         scoreBox.style.color = 'black';
     } else if (total >= 7) {
