@@ -3,7 +3,7 @@ footer {
     color: #f0f0f0;           /* teks abu terang */
     text-align: center;
     padding: 6px 0;
-    position: bottom;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;

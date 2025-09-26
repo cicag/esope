@@ -2,16 +2,7 @@
 //konek ke database
 $db = mysqli_connect("localhost", "root", "1234", "esope");
 
-//kontainer data kosong
-function query($query) {
-    global $db;
-    $dba = mysqli_query($db, $query);
-    $rows = [];
-    while( $row = mysqli_fetch_assoc($dba)){
-        $rows[] = $row;
-    }
-    return $rows;
-}
+$rows = []; // inisialisasi dulu
 
 if (isset($_POST['cari_data'])) {
     $total = intval($_POST['cari_data']);

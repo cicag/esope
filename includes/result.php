@@ -11,9 +11,6 @@
       <!-- Data will be populated by JS -->
     </tbody>
   </table>
+  <!-- Tampilkan ini jika data yang dipanggil kosong -->
 </div>
 
-  <!-- Tampilkan ini jika data yang dipanggil kosong -->
-  <?php if (empty($news)): ?>
-  <p>Tidak ditemukan hasil.</p>
-  <?php endif; ?>

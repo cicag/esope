@@ -9,7 +9,7 @@
 
 .formkiri {
     background: #f8f8f8;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -21,44 +21,159 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#scorebox {
-    background: #4CAF50;
-    color: white;
-    padding: 15px;
+.criteria {
+    padding: 0px 10px 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.option-grup {
+    border: 1px solid #ccc;
     border-radius: 8px;
+    overflow: hidden;
+}
+
+.option {
+    border-bottom: 1px solid #ccc;
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.option input {
+    display: none;
+}
+
+.option label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #eaf5ef;
+    cursor: pointer;
+    border-radius: 0; /* default */
+    transition: 0.2s;
+}
+
+/* biar ikut radius pas di atas/bawah */
+.option:first-child label {
+    border-radius: 8px 8px 0 0;
+}
+.option:last-child label {
+    border-radius: 0 0 8px 8px;
+}
+
+.option input:checked + label {
+    background: #d1e7dd;
+    font-weight: bold;
+    border: 2px solid #0a8754; /* highlight saat terpilih */
+}
+
+.buttonbox {
+    padding: 12px 10px 15px;
+}
+
+button {
+    appearance: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #3584e4;     /* biru khas GNOME */
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+/* Hover efek */
+button:hover {
+    background: #1c71d8;     /* biru lebih gelap */
+}
+
+/* Saat ditekan */
+button:active {
+    background: #1a5fb4;
+    transform: scale(0.97);
+}
+
+/* Saat nonaktif (disabled) */
+button:disabled {
+    background: #d3d3d3;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Tombol reset (varian sekunder) */
+button[type="reset"] {
+    background: #deddda;
+    color: #2e3436;
+}
+
+button[type="reset"]:hover {
+    background: #c0bfbc;
+}
+
+.isikanan {
+    position: sticky;
+    top: 10px;
+}
+
+#scorebox {
+    /*position: sticky;
+    top: 10px;*/
+    background: #6B7A5F;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px 5px 20px;
+}
+
+.skor-header {
+    font-weight: bold;
     font-size: 1.5em;
-    margin-bottom: 15px;
+}
+
+.skor-body {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-weight: bold;
+}
+
+.skor-value {
+    font-size: 3.5em;
+}
+
+.unit {
+    font-size: 1.8em;
+}
+
+#kategoribox {
+    background: #5b5e59;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 8px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+}
+
+#resultbox {
+    background: white;
+    color: #5b5e59;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #result {
     font-weight: bold;
     transition: background-color 0.3s ease;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background: #4CAF50;
-    color: white;
-}
-
-tr:hover {
-    background: #f1f1f1;
 }

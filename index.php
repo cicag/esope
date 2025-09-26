@@ -25,19 +25,29 @@ require 'includes/functions.php';
     </section>
 
     <section class="hasilkanan">
-      <div id="scorebox">
-        <a>Skor:</a>
-          <a id="result"></a>
-        <a>poin.</a>
-      </div>
-      <br>
+      <div class="isikanan">
+        <div id="scorebox">
+          <div class="skor-header">Skor:</div>
+          <div class="skor-body">
+            <div id="result" class="skor-value">‎ </div>
+          <div class="unit">poin.  </div>
+          </div>
+        </div>
+          <div id="kategoribox">
+            <a id="kategori">BELUM DIHITUNG</a>
+          </div>
 
-      <div id="wadah">
-        <?php include 'includes/result.php';?>
+          <div id="resultbox">
+            <a>Respon Klinis:</a><br>
+            <a id="respon">Belum dihitung.</a><br>
+            <a>Monitoring:</a><br>
+          <a id="monitoring">Belum dihitung.</a>
+          </div>
       </div>
-
     </section>
   </main>
+  <br>
+  <br>
 <!-- Kaki, tentang ESOPE -->
   <footer>
     <?php include 'includes/footer.php';?>
