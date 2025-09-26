@@ -177,3 +177,39 @@ button[type="reset"]:hover {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
+
+/* --- Mobile layout override --- */
+@media (max-width: 768px) {
+    .kontainer {
+        grid-template-columns: 1fr; /* satu kolom */
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .formkiri, .hasilkanan {
+        padding: 15px;
+    }
+
+    #scorebox {
+    flex-direction: column; /* header atas, angka bawah */
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    }
+
+    .skor-header {
+        font-size: 1.2em;
+    }
+
+    .skor-value {
+        font-size: 2.5em; /* diperkecil dari desktop */
+    }
+
+    .unit {
+        font-size: 1.2em;
+    }
+
+    #resultbox {
+    font-size: 1em; /* teks lebih kecil supaya pas layar */
+    }
+}
