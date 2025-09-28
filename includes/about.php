@@ -24,7 +24,7 @@
 <h1>FAQ (Frequently Asked Question)</h1>
 <h2>Apa itu ESOPE?</h2>
 
-<p><strong>ESOPE</strong> (akronim untuk <em>Esope Sistem Observasi Pasien Elektronik</em>), adalah aplikasi kalkulator NEWS sederhana. Prototipe ini dibuat untuk demonstrasi konsep ESOPE sebagai aplikasi yang membantu mengetahui intervensi lebih lanjut, dan meminimalkan kendala dalam penghitungan manual di ruangan. Nama ESOPE dipilih karena senada dengan SOP (Standard Operational Procedure) yang memang sudah familiar dan kami anggap penggunaannya unik. Kode sumber ESOPE terbuka dan bisa diakses di <a href="https://github.com/cicag/esope">github.</a></p>
+<p><strong>ESOPE</strong> (akronim untuk <em>Esope Sistem Observasi Pasien Elektronik</em>), adalah aplikasi kalkulator NEWS sederhana. NEWS (<em>National Early Warning Score</em>) adalah sebuah sistem skoring yang digunakan untuk menilai dan mendeteksi perubahan kondisi fisiologis pasien secara dini. Skor ini membantu mengenali penurunan kondisi pasien lebih awal sehingga intervensi dan tindakan medis yang tepat dapat segera diberikan. <br><br>Prototipe ini dibuat untuk demonstrasi konsep ESOPE sebagai aplikasi yang membantu mengetahui intervensi lebih lanjut, dan meminimalkan kendala dalam penghitungan manual di ruangan. Nama ESOPE dipilih karena senada dengan SOP (<em>Standard Operational Procedure</em>) yang memang sudah familiar dan kami anggap penggunaannya unik. Untuk berkontribusi, diskusi, dan pelaporan isu, kode sumber ESOPE terbuka dan bisa diakses di <a href="https://github.com/cicag/esope"><em>github.</em></a></p>
 
 <h2>Untuk siapa ESOPE?</h2>
 
