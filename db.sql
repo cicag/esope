@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 23, 2025 at 04:05 AM
+-- Generation Time: Sep 28, 2025 at 08:50 AM
 -- Server version: 8.0.35-0ubuntu0.22.04.1
 -- PHP Version: 8.2.13
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `news` (
   `id` int NOT NULL,
-  `klasifikasi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `respon` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `tindakan` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `monitoring` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `klasifikasi` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `respon` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tindakan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `monitoring` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nummin` int NOT NULL,
   `nummax` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -43,8 +43,8 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` (`id`, `klasifikasi`, `respon`, `tindakan`, `monitoring`, `nummin`, `nummax`) VALUES
 (1, 'SANGAT RENDAH', '<ol>\r\n<li>Pemantauan Tanda Vital Rutin</li>\r\n</ol>', 'Melanjutkan monitoring.', 'Minimal setiap 12 jam', 0, 0),
-(2, 'RENDAH', '<ol>\r\n<li>Pemantauan tanda vital rutin,</li>\r\n<li>Dokumentasi skor NEWS,</li>\r\n<li>Lanjutkan perawatan sesuai kondisi.</li>\r\n</ol>', 'Perawat melakukan asessmen atau perawat meningkatkan frekuensi monitoring', 'Minimal 4-6 jam.', 1, 4),
-(3, 'SEDANG', '<ol>\r\n<li>Tingkatkan frekuensi pemantauan menjadi setiap 4-6 jam,</li>\r\n<li>Laporkan ke DPJP,</li>\r\n<li>ertimbangkan pemberian oksigen jika diperlukan,</li>\r\n<li>Evaluasi kebutuhan pemeriksaan penunjang (e.g., EKG, lab).</li>\r\n</ol>', 'Perawat berkolaborasi dengan tim / pemberian asesmen kegawatan / meningkatkan perawatan dengan fasilitas monitor yang lengkap.', 'Minimal setiap 1 jam.', 5, 6),
+(2, 'RENDAH', '<ol>\r\n<li>Pemantauan tanda vital rutin,</li>\r\n<li>Dokumentasi skor NEWS,</li>\r\n<li>Lanjutkan perawatan sesuai kondisi.</li>\r\n</ol>', 'Perawat melakukan asessmen atau perawat meningkatkan frekuensi monitoring', 'Minimal setiap 4-6 jam.', 1, 4),
+(3, 'SEDANG', '<ol>\r\n<li>Tingkatkan frekuensi pemantauan menjadi setiap 4-6 jam,</li>\r\n<li>Laporkan ke DPJP,</li>\r\n<li>Pertimbangkan pemberian oksigen jika diperlukan,</li>\r\n<li>Evaluasi kebutuhan pemeriksaan penunjang (e.g., EKG, lab).</li>\r\n</ol>', 'Perawat berkolaborasi dengan tim / pemberian asesmen kegawatan / meningkatkan perawatan dengan fasilitas monitor yang lengkap.', 'Minimal setiap 1 jam.', 5, 6),
 (4, 'TINGGI', '<ol>\r\n<li>Segera laporkan ke DPJP,</li>\r\n<li>Pantau tanda vital setiap 30-60 menit,</li>\r\n<li>Siapkan akses IV, oksigen, dan alat emergensi,</li>\r\n<li>Pertimbangkan transfer ke ICU,</li>\r\n<li>Mulai pendokumentasian berkala setiap jam.</li>\r\n</ol>', 'Berkolaborasi dengan tim medis/ pemberi asesmen kegawatan/ pindah ruangan HCU/ICU.', 'Monitor setiap saat.', 7, 20);
 
 --
