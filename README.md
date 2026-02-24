@@ -30,13 +30,3 @@ Konsep antarmuka:
 ---
 ## Note
 Pakai branch ![tampilan](https://github.com/cicag/esope/tree/tampilan) untuk mendapatkan tampilan.  
-Default database:  
-
-```
-address  : localhost
-username  : root
-password  : 1234
-database  : esope
-```
-Bisa disesuaikan di includes/functions.php
-
