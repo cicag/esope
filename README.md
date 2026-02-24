@@ -21,12 +21,7 @@ Konsep antarmuka:
    git clone https://github.com/cicag/esope
    ```
 2. Pindahkan folder ke dokumen root webserver
-3. Import database (bisa pakai phpmyadmin) atau:
-   
-   ```bash
-   ./mysql -u root -p esope < db.sql
-   ```
-4. Jalankan webserver dan akses dari localhost
+3. Jalankan webserver dan akses dari localhost
 ---
 ## Note
 Pakai branch ![tampilan](https://github.com/cicag/esope/tree/tampilan) untuk mendapatkan tampilan.  
