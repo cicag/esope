@@ -26,7 +26,7 @@
 //     exit;
 // }
 
-$db_path = __DIR__ . '/../esope.sqlite';
+$db_path = __DIR__ . '/../app/esope.sqlite';
 
 // Cek apakah file database benar-benar ada
 if (!file_exists($db_path)) {
