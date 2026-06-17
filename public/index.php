@@ -1,5 +1,5 @@
 <?php
-require 'includes/functions.php';
+require '../app/functions.php';
 ?>
 
 <!-- Kepala Halaman -->
