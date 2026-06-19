@@ -52,7 +52,7 @@ function Hitung() {
 
 
 // kirim total ke PHP
-fetch("../app/functions.php", {
+fetch("../includes/api.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: "cari_data=" + total
