@@ -24,4 +24,4 @@ Konsep antarmuka:
 3. Jalankan webserver dan akses dari localhost
 ---
 ## Note
-Pakai branch ![tampilan](https://github.com/cicag/esope/tree/tampilan) untuk mendapatkan tampilan.  
+Pakai branch [tampilan](https://github.com/cicag/esope/tree/tampilan) untuk mendapatkan tampilan.  
