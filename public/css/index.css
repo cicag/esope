@@ -121,14 +121,83 @@ button[type="reset"]:hover {
 #scorebox {
     /*position: sticky;
     top: 10px;*/
-    background: #6B7A5F;
-    color: white;
+
+    /* Status NETRAL: belum ada yang dihitung.
+       Isinya putih, sama seperti .risiko-0 (SANGAT RENDAH). Karena warna
+       isinya sama, pembeda "belum dihitung" dari "hasil = 0" bukan lagi
+       warna, melainkan tiga hal sekaligus:
+         1. garis putus-putus di bawah (hasil selalu garis solid)
+         2. label "BELUM DIHITUNG" di #kategoribox
+         3. angka skor yang masih kosong
+       Hijau tetap dihindari: hijau sudah berarti "risiko RENDAH", jadi
+       kotak kosong tidak boleh tampil seolah sudah dinilai aman. */
+    background: #ffffff;
+    color: #4a5058;
+    border: 2px dashed #8b95a3;
     border-radius: 8px;
     margin-bottom: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     display: flex;
     justify-content: space-between;
     padding: 8px 20px 5px 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Semua status yang SUDAH ada hasilnya: isi solid, garis putus-putus hilang. */
+#scorebox.risiko-0,
+#scorebox.risiko-1,
+#scorebox.risiko-2,
+#scorebox.risiko-3,
+#scorebox.risiko-tidak-diketahui {
+    border: 2px solid transparent;
+}
+
+/* Warna kotak skor. Nilainya TIDAK di-hardcode di JS — kolom `warna` di
+   tabel `news` yang menunjuk ke kelas-kelas di bawah ini.
+   Tambah/ubah risiko = ubah DB + CSS, tidak perlu sentuh JS.
+
+   Penting: selektornya "#scorebox.risiko-N", bukan ".risiko-N".
+   Aturan #scorebox di atas punya spesifisitas (1,0,0) dan selalu menang atas
+   (0,1,0), jadi kelas risiko akan diabaikan dan kotak tidak pernah berubah
+   warna. */
+#scorebox.risiko-0 {
+    background: #ffffff;   /* tanpa risiko */
+    color: #000000;
+}
+
+#scorebox.risiko-1 {
+    background: #65824e;   /* rendah */
+    color: #ffffff;
+}
+
+#scorebox.risiko-2 {
+    background: #f2ee27;   /* sedang */
+    color: #000000;
+}
+
+#scorebox.risiko-3 {
+    background: #e02020;   /* tinggi / kritis */
+    color: #ffffff;
+}
+
+/* Sedang memproses — request sudah dikirim, jawaban DB belum tiba.
+   Biru muda: sedikit "hidup", tapi tetap jelas bukan hasil. */
+#scorebox.risiko-diproses {
+    background: #dbe7f5;
+    color: #3d5a80;
+    border: 2px solid #a8c4e0;
+}
+
+/* Tidak ditemukan / gagal — jangan tampilkan warna risiko apa pun */
+#scorebox.risiko-tidak-diketahui {
+    background: repeating-linear-gradient(
+        45deg,
+        #e4e4e4,
+        #e4e4e4 10px,
+        #d3d3d3 10px,
+        #d3d3d3 20px
+    );
+    color: #2e3436;
 }
 
 .skor-header {
