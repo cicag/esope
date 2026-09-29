@@ -247,6 +247,56 @@ button[type="reset"]:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Label "Respon Klinis:" / "Monitoring:". Dipisah dari isinya supaya
+   jelas mana judul dan mana isi yang diambil dari database.
+   Jarak bawah 6px memberi jarak napas 2px dari sub-box di bawahnya. */
+.label-hasil {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Sub-box penampung isi dari database. Visibilitasnya datang dari
+   outline 1px di keempat sisi: latar sub-box sengaja dibuat hampir
+   sekalian putih dengan #resultbox, jadi pemisahnya harus pakai garis
+   dan bukan perbedaan warna atau bayangan. Bayangan tidak dipakai di
+   sini karena hasilnya tepi atas/bawah ikut menebal dan membingungkan
+   di antara dua sub-box yang berdempetan. */
+.subbox {
+    background: #fdfdfc;
+    border: 1px solid #ccd2c7;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+}
+
+.subbox a {
+    color: #2e3436;
+    text-decoration: none;
+    display: block;
+}
+
+/* Isi klinis dari database berupa daftar <ol>, jadi rapatkan
+   jarak antardaftar dan hilangkan indentasi yang terlalu dalam. */
+.subbox ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.subbox li {
+    margin-bottom: 6px;
+}
+
+.subbox li:last-child {
+    margin-bottom: 0;
+}
+
+/* Pemisah antar bagian Monitoring, karena subbox terakhir tidak punya
+   jarak bawah lagi dari #resultbox. */
+#resultbox > .label-hasil ~ .subbox:last-child {
+    margin-bottom: 0;
+}
+
 /* --- Mobile layout override --- */
 @media (max-width: 768px) {
     .kontainer {

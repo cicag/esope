@@ -38,12 +38,16 @@ require __DIR__ . '/../app/functions.php';
             <a id="kategori">BELUM DIHITUNG</a>
           </div>
 
-          <div id="resultbox">
-            <a>Respon Klinis:</a><br>
-            <a id="respon">Belum dihitung.</a><br>
-            <a>Monitoring:</a><br>
-          <a id="monitoring">Belum dihitung.</a>
-          </div>
+            <div id="resultbox">
+              <a class="label-hasil">Respon Klinis:</a>
+              <div class="subbox" id="subbox-respon">
+                <a id="respon">Belum dihitung.</a>
+              </div>
+              <a class="label-hasil">Monitoring:</a>
+              <div class="subbox" id="subbox-monitoring">
+                <a id="monitoring">Belum dihitung.</a>
+              </div>
+            </div>
       </div>
     </section>
   </main>
