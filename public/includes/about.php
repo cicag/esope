@@ -50,7 +50,7 @@ Cara Penggunaan:
 </ol></p>
 
 <footer>
-<?php include 'footer.php';?>
+<?php include __DIR__ . '/footer.php';?>
 </footer>
 </body>
 </html>

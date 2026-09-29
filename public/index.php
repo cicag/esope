@@ -1,5 +1,5 @@
 <?php
-require '../app/functions.php';
+require __DIR__ . '/../app/functions.php';
 ?>
 
 <!-- Kepala Halaman -->
@@ -15,13 +15,13 @@ require '../app/functions.php';
 
 <body>
   <header>
-    <?php include 'includes/header.php';?>
+    <?php include __DIR__ . '/includes/header.php';?>
   </header>
 
   <main class="kontainer">
     <section class="formkiri">
       <form id="news">
-        <?php include 'includes/form.php';?>
+        <?php include __DIR__ . '/includes/form.php';?>
       </form>
     </section>
 
@@ -51,7 +51,7 @@ require '../app/functions.php';
   <br>
 <!-- Kaki, tentang ESOPE -->
   <footer>
-    <?php include 'includes/footer.php';?>
+    <?php include __DIR__ . '/includes/footer.php';?>
   </footer>
 
 <script src="js/hitung.js"></script>
