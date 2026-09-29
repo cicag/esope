@@ -25,11 +25,6 @@
       });
 
 // Terapkan kelas warna pada #scorebox.
-// Kelas apa pun yang berawalan "risiko-" dibersihkan dulu, lalu kelas baru
-// dipasang. Nama kelas TIDAK divalidasi di sini: sumbernya kolom `warna`
-// dari database, dan bila nilainya salah/kosong, #scorebox tetap tampil
-// netral sesuai styling default CSS — bukan warna risiko yang menyesatkan.
-// Dicicil dari belakang karena remove() menyusutkan daftar.
 function setRisiko(kelas) {
     const scoreBox = document.getElementById("scorebox");
     for (let i = scoreBox.classList.length - 1; i >= 0; i--) {
@@ -53,23 +48,15 @@ function Hitung() {
 
     document.getElementById("result").textContent = total;
 
-    // Warna TIDAK ditentukan di sini. Semua ambang batas (nummin/nummax)
-    // beserta warnanya berasal dari DB; file ini hanya menempelkan hasilnya.
     setRisiko("risiko-diproses");
 
-// Path relatif terhadap dokumen (index.php), sama seperti header/footer
-// memakai "includes/about.php". Bukan relatif terhadap folder js/.
-//   /public/            -> /public/includes/api.php
-//   /public/index.php   -> /public/includes/api.php
-// "../includes/api.php" hanya benar pada kasus kedua; yang pertama 404.
 fetch("includes/api.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: "cari_data=" + total
 })
 .then(res => {
-    // Jangan langsung res.json() pada respons error: badan error Apache itu
-    // HTML, jadi JSON.parse melempar SyntaxError dan menutupi status aslinya.
+
     if (!res.ok) {
         throw new Error("HTTP " + res.status);
     }
