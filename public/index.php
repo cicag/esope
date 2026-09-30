@@ -59,5 +59,6 @@ require __DIR__ . '/../app/functions.php';
   </footer>
 
 <script src="js/hitung.js"></script>
+<script src="js/skor-nempel.js"></script>
 </body>
 </html>

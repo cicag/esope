@@ -121,16 +121,7 @@ button[type="reset"]:hover {
 #scorebox {
     /*position: sticky;
     top: 10px;*/
-
-    /* Status NETRAL: belum ada yang dihitung.
-       Isinya putih, sama seperti .risiko-0 (SANGAT RENDAH). Karena warna
-       isinya sama, pembeda "belum dihitung" dari "hasil = 0" bukan lagi
-       warna, melainkan tiga hal sekaligus:
-         1. garis putus-putus di bawah (hasil selalu garis solid)
-         2. label "BELUM DIHITUNG" di #kategoribox
-         3. angka skor yang masih kosong
-       Hijau tetap dihindari: hijau sudah berarti "risiko RENDAH", jadi
-       kotak kosong tidak boleh tampil seolah sudah dinilai aman. */
+    /*scorebox netral*/
     background: #ffffff;
     color: #4a5058;
     border: 2px dashed #8b95a3;
@@ -152,14 +143,7 @@ button[type="reset"]:hover {
     border: 2px solid transparent;
 }
 
-/* Warna kotak skor. Nilainya TIDAK di-hardcode di JS — kolom `warna` di
-   tabel `news` yang menunjuk ke kelas-kelas di bawah ini.
-   Tambah/ubah risiko = ubah DB + CSS, tidak perlu sentuh JS.
-
-   Penting: selektornya "#scorebox.risiko-N", bukan ".risiko-N".
-   Aturan #scorebox di atas punya spesifisitas (1,0,0) dan selalu menang atas
-   (0,1,0), jadi kelas risiko akan diabaikan dan kotak tidak pernah berubah
-   warna. */
+/* Warna sesuai nilai db*/
 #scorebox.risiko-0 {
     background: #ffffff;   /* tanpa risiko */
     color: #000000;
@@ -180,8 +164,7 @@ button[type="reset"]:hover {
     color: #ffffff;
 }
 
-/* Sedang memproses — request sudah dikirim, jawaban DB belum tiba.
-   Biru muda: sedikit "hidup", tapi tetap jelas bukan hasil. */
+/* Sedang memproses */
 #scorebox.risiko-diproses {
     background: #dbe7f5;
     color: #3d5a80;
@@ -247,21 +230,13 @@ button[type="reset"]:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Label "Respon Klinis:" / "Monitoring:". Dipisah dari isinya supaya
-   jelas mana judul dan mana isi yang diambil dari database.
-   Jarak bawah 6px memberi jarak napas 2px dari sub-box di bawahnya. */
+/* Label "Respon Klinis:" / "Monitoring:"*/
 .label-hasil {
     display: inline-block;
     font-weight: bold;
     margin-bottom: 6px;
 }
 
-/* Sub-box penampung isi dari database. Visibilitasnya datang dari
-   outline 1px di keempat sisi: latar sub-box sengaja dibuat hampir
-   sekalian putih dengan #resultbox, jadi pemisahnya harus pakai garis
-   dan bukan perbedaan warna atau bayangan. Bayangan tidak dipakai di
-   sini karena hasilnya tepi atas/bawah ikut menebal dan membingungkan
-   di antara dua sub-box yang berdempetan. */
 .subbox {
     background: #fdfdfc;
     border: 1px solid #ccd2c7;
@@ -326,6 +301,75 @@ button[type="reset"]:hover {
     }
 
     #resultbox {
-    font-size: 1em; /* teks lebih kecil supaya pas layar */
+    font-size: 1em;
+    }
+
+    /* --- Scorebox menempel di bawah layar (mobile saja) ---*/
+
+    body.skor-nempel div:has(> #scorebox) {
+        padding-top: var(--tinggi-skor, 0px);
+    }
+
+    body.skor-nempel #scorebox {
+        position: fixed;
+        /* Melayang: sisakan jarak dari tepi kiri/kanan, bukan menempel
+           penuh ke lebar layar. Kotak yang menempel tepi terlihat seperti
+           panel, bukan seperti kartu yang mengambang di atas konten. */
+        left: 12px;
+        right: 12px;
+        /* Berdiri di atas footer dengan jarak, bukan menutupinya —
+           footer.css memakai position:fixed di semua lebar layar. */
+        bottom: calc(var(--tinggi-footer, 0px) + 10px);
+        z-index: 20;
+        /* margin-bottom SENGAJA tidak diubah jadi 0. Posisi sudah diikat
+           oleh `bottom`, jadi margin tidak berpengaruh ke penempatan —
+           tapi marginBottom ikut dibaca ukurTinggi() untuk menghitung
+           ruang yang harus dijaga. Kalau diubah 0, ruang cadangan
+           menyusut 8px begitu kotak nempel dan #kategoribox melompat. */
+        cursor: pointer;
+        /* Sudut membulat, garis tepi, dan bayangan DILETAKKAN UTUH
+           seperti #scorebox yang normal di bawah — jangan diratakan
+           supaya yang menempel tetap terlihat sebagai kotak yang sama. */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        /* Hint "Lihat hasil" di kanan; margin-left:auto menaruhnya
+           ke tepi kanan tanpa mengubah urutan DOM. */
+        justify-content: flex-start;
+        gap: 10px;
+        /* Animasi MASUK (slide naik) dan KELUAR (slide turun)*/
+        transform: translateY(0);
+        transition: transform 0.28s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.skor-nempel #scorebox.skor-tersembunyi {
+        transform: translateY(calc(100% + 20px));
+    }
+
+    /* Dipakai satu frame saat memasang kotak, supaya posisi tersembunyi
+       langsung terpakai tanpa ikut dianimasikan. Tanpa ini transform
+       ikut bertransisi dari translateY(0) ke posisi tersembunyi, sehingga
+       yang terlihat bukan slide naik melainkan kotak yang goyang naik-turun
+       di tempat. */
+    body.skor-nempel #scorebox.skor-tanpa-animasi {
+        transition: none;
+    }
+
+    body.skor-nempel #scorebox::after {
+        content: "\2193\00a0Lihat hasil";
+        margin-left: auto;
+        font-size: 0.8em;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+
+    body.skor-nempel #scorebox:active {
+        filter: brightness(0.94);
+    }
+
+    /* Hormati pengguna yang mengurangi animasi di OS. */
+    @media (prefers-reduced-motion: reduce) {
+        body.skor-nempel #scorebox,
+        body.skor-nempel #scorebox.skor-tersembunyi {
+            transition: none;
+        }
     }
 }
