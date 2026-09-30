@@ -1,0 +1,100 @@
+/* Halaman FAQ (public/includes/about.php).
+
+   Dipisah dari PHP supaya aturan tampilannya bisa ikut diedit bareng
+   index.css tanpa perlu menyunting file PHP. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #2e3436;
+    line-height: 1.6;
+    /* URL panjang di dalam <a> tidak boleh memaksa halaman
+       melebar di layar sempit. */
+    overflow-wrap: break-word;
+}
+
+/* Sub-judul di dalam bar hijau header. */
+.judul-sub {
+    display: block;
+    font-size: 0.85rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px 72px;
+}
+
+/* Satu kartu rounded per segmen, warna dan radiusnya sama dengan
+   .formkiri di halaman depan. */
+.segmen {
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+}
+
+.segmen:last-child {
+    margin-bottom: 0;
+}
+
+/* Garis hijau di kiri judul memakai warna header, supaya tiap
+   segmen cepat dipindai mata tanpa harus membaca judulnya dulu. */
+.segmen h2 {
+    color: #4a5058;
+    font-size: 1.15em;
+    margin: 4px 0 10px;
+    padding-left: 10px;
+    border-left: 4px solid #6B7A5F;
+}
+
+.segmen p {
+    margin: 0 0 10px;
+}
+
+.segmen p:last-child {
+    margin-bottom: 0;
+}
+
+.segmen ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.segmen li {
+    margin-bottom: 6px;
+}
+
+.segmen li:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: #1a5fb4;
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+    main {
+        padding: 12px 12px 72px;
+    }
+
+    body {
+        font-size: 16px; /* < 16px memicu zoom otomatis di iOS */
+        line-height: 1.7;
+    }
+
+    .segmen {
+        padding: 14px 16px;
+        margin-bottom: 12px;
+    }
+
+    .segmen ol {
+        padding-left: 18px;
+    }
+}
